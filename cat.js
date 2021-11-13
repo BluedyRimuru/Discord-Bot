@@ -5,11 +5,11 @@ client.on('message', async message => {
 
   if(cmd === `${prefix}cat`) {
 
-    let msg = await message.channel.send("Generating...")
+    let msg = await message.channel.send("Génération en cours...")
     let {body} = await superagent
     .get(`http://aws.random.cat/meow`)
 
-    if(!{body}) return message.channel.send("J'ai cessé, réessayer !")
+    if(!{body}) return message.channel.send("Réessayez...")
 
       let cEmbed = new Discord.MessageEmbed()
       .setColor("#DC143C")
